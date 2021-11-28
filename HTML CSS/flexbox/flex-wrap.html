@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex wrap</title>
+    <style>
+        .flex-container {
+            display: flex; /*esse código é para colocar um item do lado do outro*/
+            height: 150px; /*container com 150px de altura*/
+            border: 2px solid black; /*adiciona a borda no container*/
+            max-width: 300px; /*largura máxima do container é de 300px*/
+        }
+        /*
+        .flex-container {
+            display: flex;]
+            border: 2px solid black;
+            max-width: 300px; 
+            flex-direction: column; /*o container fica em forma de coluna, os itens ficam um embaixo do outro*/       
+        .item { /*elemento filho*/
+            font-size: 24px;
+            height: 50%;
+            text-align: center;
+            min-width: 100px; /*largura nesse caso dos itens, como tem 3 itens setado na div abaixo, irá ficar no limite do container que foi setado 300px de laargura, se acrescentar mais 1 item, mais uma div, esse item ficará fora do container, porque precisaria que o container tivesse 400px de largura, o mesmo acontece com a altura*/
+            line-height: 50px; /*o conteúdo de dentro da flex vai ter um espaaço de 50px em cima dando uma centralizada na vertical*/
+        }
+        .nowrap {
+            flex-wrap: nowrap; /*código para fazer a quebra ou não de linha, nowrap é para não fazer quebra de linha*/
+        }
+        .wrap {
+            flex-wrap: wrap; /*código para fazer a quebra de linha, wrap é para fazer a quebra de linha*/
+        }
+        .wrap-reverse {
+            flex-wrap: wrap-reverse; /*faz a quebra de linha de baixo para cima*/
+        }
+        .blue {
+            background-color: blue;
+        }
+        .green {
+            background-color: lightgreen;
+        }
+        .orange {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>no wrap</h1>
+    <div class="flex-container">
+        <div class="item orange">1</div> <!--div.item*3 já vai criar 3 divis com a class="item" automaticamente-->
+        <div class="item green">2</div>
+        <div class="item blue">3</div>
+        <div class="item blue">3</div>
+    </div>    
+    <h1>Wrap</h1>
+    <div class="flex-container wrap"> <!--nesse caso terá a quebra de linha, porque foi setador a class wrap, a largura máxima de flex-container é de 300px, cada item ta setado com 100 de largura, como tem 3 itens o quarto item/div descerá para linha de baixo-->
+        <div class="item green">1</div>
+        <div class="item blue">2</div>
+        <div class="item orange">3</div> 
+        <div class="item blue">3</div> 
+    </div> 
+    <h1>nowrap</h1>
+    <div class="flex-container wrap-reverse">
+        <div class="item green">1</div>
+        <div class="item blue">2</div>
+        <div class="item orange">3</div>
+        <div class="item orange">4</div>
+    </div>  
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex basis</title>
+    <style>
+        .flex-container {
+            max-width: 500px;
+            border: 1px solid black;
+            display: flex; /*torna os elementos filhos/itens em caixas flexíveis*/
+        }
+        .items {
+            background-color: coral;
+            color: white;
+            text-align: center;
+            margin: 5px;
+        }
+        .bauto {
+            flex-basis: auto; /*vai se adaptar ao tamanho do conteúdo do item automaticamente, vai tentar ocupar todo o restante do espaço dentro do container*/
+        }
+        .bzero {
+            flex-basis: 0; /*faz com que todos os ítens terão o mesmo tamanho, até que não possa mais comprimir esse conteúdo e o item crescer*/
+        }
+        .flex-grow1 {
+            flex-grow: 1; /*código de fator de crescimento do item*/
+        }
+        .flex-grow2 {
+            flex-grow: 2; /*nesse caso vai multiplicar o grow em 2x*/
+        }
+        .width100 {
+            flex-basis: 100px; /*cada item terá 100px*/  
+        }
+    </style>
+</head>
+<body>
+    <h1>basis auto</h1>
+    <div class="flex-container">
+        <div class="items bauto flex-grow1">A</div>
+        <div class="items bauto flex-grow1">BBB</div>
+        <div class="items bauto flex-grow1">C</div>
+        <div class="items bauto flex-grow2">DEF</div>
+    </div>  
+    <h1>basis 0</h1>
+    <div class="flex-container">
+        <div class="items bzero flex-grow1">AAAAAAA</div>
+        <div class="items bzero flex-grow1">BBB</div>
+        <div class="items bzero flex-grow1">C</div>
+        <div class="items bzero flex-grow1">DEF</div>
+    </div>  
+    <h1>basis + width</h1>
+    <div class="flex-container">
+        <div class="items width100 flex-grow1">AA</div>
+        <div class="items width100 flex-grow2">BBB</div>
+        <div class="items width100 flex-grow1">CCCC</div>
+        <div class="items width100 flex-grow1">DEF</div>
+    </div> 
+</body>
+</html>

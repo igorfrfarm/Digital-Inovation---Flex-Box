@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-container {
+            display: flex;
+            max-width: 350px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+        .item {
+            flex: 1; /*aqui está dizendo que o grow=1 (o espaçamento que sobra do conteúdo está sendo alinhado com a proporcionalidade de 1) o shrink=1 (é a compressão de 1 vez do item relacionado ao conteúdo) e o basis=0 (vai fazer com que não haja quebra no item, então se continuaar crescendo o conteúdo, irá crescer o item sem a quebra de linha)*/
+            background-color: brown;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            margin: 5px;
+        }
+        .order1 {
+            order: 1; /*eu mudo a ordem dos itens usando order 1, order 2, order 3 basta criar a classe e adicionar no item div*/
+        }
+        .order2 {
+            order: 2;
+        }
+        .order3 {
+            order: 3;
+        }
+        .order4 {
+            order: 4;
+        }
+        .direction {
+            flex-direction: column; /*muda o container para coluna os itens ficam um embaixo do outro*/   
+        }
+    </style>
+</head>
+<body>
+    <h1>order 0 row</h1> 
+    <div class="flex-container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>  
+    <h1>order diferentes</h1> 
+    <div class="flex-container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item order2">4</div>
+        <div class="item order3">4n</div>
+        <div class="item order1">4m</div>
+    </div> 
+    <h1>order diferentes em column</h1> 
+    <div class="flex-container direction">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item order2">4</div>
+        <div class="item order3">4n</div>
+        <div class="item order1">4m</div>
+    </div> 
+</body>
+</html>

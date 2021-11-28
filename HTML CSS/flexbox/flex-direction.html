@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Flex direction</title>
+    <style>
+        .flex-container {
+            margin: 0;
+            padding: 0;
+            display: flex; /*esse código é para colocar um item do lado do outro*/
+            list-style: none; /*ao criar uma lista, irá tirar os pontinhos ou os números na frente da lista*/
+        }
+
+        .flex-item {
+            background: blue;
+            height: 50px; /*altura*/
+            width: 50px; /*largura*/
+            line-height: 50px; /*altura da linha*/
+            font-size: 20px;
+            color: white;
+            text-align: center; /*alinhamento do texto ao centro*/
+            margin: 5px; /*os itens que estão dentro dentro da flex-container, esse código é para separar os itens, sendo possível ver a separação ou os espaços entres os itens dentro da flex-container*/
+        }
+        .row {
+            flex-direction: row; /*irá organizar os itens da esquerda para direita em uma linha*/ 
+        }
+        .row-reverse {
+            flex-direction: row-reverse; /*os itens ficam alinhados ao lado oposto, da ordem da direita para esquerda, para delimitar essa área pode usar o código no .flex-item {max-width: 500px} que ficará mais ou menos no centro da tela*/
+        }
+        .row-reverse li {
+            background-color: red; /*aqui vou colorir o fundo dos itens*/
+        }
+        .column {
+            float: left; /*a coluna ficará na parte esquerda da página*/
+            flex-direction: column; /*os itens ficarão em uma coluna, de cima para baixo*/
+        }
+        .column li {
+            background-color: yellow; /*aqui vou colorir o fundo dos itens*/
+        }
+        .column-reverse {
+            float: right; /*a coluna ficará na direita da página*/
+            flex-direction: column-reverse;
+        }
+        .column-reverse li {
+            background-color: purple; /*aqui vou colorir o fundo dos itens*/
+        }
+    </style>
+</head>
+<body>
+    <ul class="flex-container row">
+        <li class="flex-item">1</li> <!--li*5 vai criar os 5 li-->
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul>  
+    <ul class="flex-container row-reverse">
+        <li class="flex-item">1</li> <!--li*5 vai criar os 5 li-->
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul> 
+    <ul class="flex-container column">
+        <li class="flex-item">1</li> <!--li*5 vai criar os 5 li-->
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul>    
+    <ul class="flex-container column-reverse">
+        <li class="flex-item">1</li> <!--li*5 vai criar os 5 li-->
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul>      
+</body>
+</html>

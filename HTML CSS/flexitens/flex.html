@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex</title>
+    <style>
+        .flex-container {
+            display: flex;
+            border: 1px solid black;
+            max-width: 400px;
+            margin-bottom: 10px;
+        }
+        .item {
+            background-color: brown;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            margin: 5px;
+        }
+        .flex1 {
+            flex: 1; /*aqui está dizendo que o grow=1 (o espaçamento que sobra do conteúdo está sendo alinhado com a proporcionalidade de 1) o shrink=1 (é a compressão de 1 vez do item relacionado ao conteúdo) e o basis=0 (vai fazer com que não haja quebra no item, então se continuaar crescendo o conteúdo, irá crescer o item sem a quebra de linha)*/
+        }
+        .largura {
+            width: 200px;
+        }
+        .flex {
+            flex: 2; /*aqui o grow=2 o shrink=1 e o basis=0*/
+        }
+    </style>
+</head>
+<body>
+    <h1>flex 1</h1>
+    <div class="flex-container">
+        <div class="item flex1">A</div>
+        <div class="item flex1">BBB</div>
+        <div class="item flex1">CC</div>
+        <div class="item flex1">D</div>
+        <div class="item flex1">EF</div>
+    </div>
+    <h1>flex 2</h1>
+    <div class="flex-container">
+        <div class="item flex1">A</div>
+        <div class="item flex2">BBB</div>
+        <div class="item flex2">CC</div>
+        <div class="item flex1">D</div>
+        <div class="item flex1">EF</div>
+    </div>
+    <h1>width ignorado basis=0</h1>
+    <div class="flex-container">
+        <div class="item largura">A</div>
+        <div class="item largura">BBB</div>
+        <div class="item largura">CC</div>
+        <div class="item largura">D</div>
+        <div class="item largura">EF</div>
+    </div>
+</body>
+</html>

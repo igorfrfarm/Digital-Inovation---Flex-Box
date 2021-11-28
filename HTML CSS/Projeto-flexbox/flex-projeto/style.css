@@ -1,0 +1,246 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'open sans', sans-serif;
+}
+ul {
+    list-style: none; /*tirar o estilo das listas, tirar os pontinhos ou números da frente da lista*/
+    margin: 0;
+    padding: 0;
+}
+ul li a{
+    text-decoration: none; /*tirar underline da ancora da lista dentro de ul*/
+}
+div img { /*o que estiver em div e for imagem, aqui vai trabalhar a responsividade das imagens*/
+    display: block;
+    width: 100%;
+}
+.flex-container {
+    display: flex; /*cria o container e faz com que seja possível manipular os itens filhos do container*/
+    max-width: 992px; /*maxima largura do container*/
+    margin: auto; /*margem automática*/
+    width: 100%;
+    min-width: 320px;
+}
+header { /*header é uma tag, não é uma classe, por isso não utilizar ponto, header é cabeçalho*/
+    background-color: #122A57;
+    height: 100px;
+    display: flex;
+    align-items: center; /*alinhamento dos items ao centro*/
+    color: white;
+}
+header .list-items { /*class list-items que está dentro da tag header*/
+    display: flex; /*cria o container na classe list-items dentro de header e faz com que seja possível manipular os itens filhos do container*/
+    max-width: 260px;
+    width: 100%; /*largura do item, vai fazer com que fique espaçado*/
+    justify-content: space-between; /*vai alinhar os itens do início e do final próximo a linha inicial e final do container*/
+    align-items: center; /*irá alinha os itens ao centro na vertical*/
+}
+.list-items li a{ /*aconra dentro de li que esta dentro da class list-items*/
+    color: white; /*vai dar cor a ancora da lista dentro da classe list-items*/
+}
+header .menu { /*class menu dentro da tag header*/
+    justify-content: space-between; /*vai alinhar o menu para a direita*/
+}
+.apresentacao { /*class apresentacao*/
+    height: 100vh; /*vh é viewport*/
+    align-items: center; /*alinhamento dos items ao centro*/
+    justify-content: space-between; /*vai alinhar os itens do início e do final próximo a linha inicial e final do container*/
+}
+.apresentacao .texto-apresentacao { /*classe texto-apresentacao dentro da classe apresentacao*/
+    min-width: 200px;
+}
+.texto-apresentacao h1 { /*h1 dentro da class texto-apresentação*/
+    color: #122A57;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+.btn { /*texto ancora é o saiba mais*/
+    background-color: #122A57;
+    color: white;
+    text-align: center;
+    border-radius: 30px; /*a borda fica arredondada*/
+    width: 220px;
+    display: block;
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px; /*centraliza o texto verticalmente*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#quem-somos { /*id quem somos*/
+    flex-direction: row-reverse; /*inverte a posição ou troca de lado os itens, o item que ta na direita vai para esquerda e o item que está na esquerdaa vai para direita*/
+    align-items: center; /*alinhamento dos items ao centro*/
+    justify-content: space-between; /*vai alinhar os itens do início e do final próximo a linha inicial e final do container*/
+}
+#quem-somos h2 { /*h2 dentro do id quem-somos*/
+    font-size: 32px;
+    color: #122A57;
+    display: flex; /*cria o container e faz com que seja possível manipular os itens filhos do container, nesse caso o quem somos se transformará em container*/   
+    margin-bottom: 20px; 
+}
+#quem-somos h2::before { /*before é um pseudo-elemento, irá criar uma barra (|) de destaque no quem somos*/
+    content: ""; /*para acrescentar o risco content tem que estar vazio*/
+    height: 50px; /*dimensionamento da barra*/
+    width: 5px; /*dimensionamento da barra*/
+    margin-right: 5px;
+    background-color: #122A57;
+    position: relative;
+}
+#quem-somos p { /*texto dentro do id quem-somos*/
+    margin-bottom: 10px;
+    width: 90%;
+}
+#quem-somos img { /*img dentro do id quem-somos*/
+    min-width: 420px;  /*irá aumentar a largura da imagem*/
+}
+.container-externo {
+    background-color: #122A57;
+    width: 100%;    
+}
+#servicos { /*id serviços*/
+    flex-direction: column; /*os itens vão ficar em coluna*/
+    padding-top: 50px; /*preenchimento no topo*/
+    padding-bottom: 100px; /*preenchimento embaixo*/
+}
+#servicos h2 { /*h2 drntro de id serviços*/
+    color: white;
+    font-size: 32px;
+    margin-bottom: 20px;   
+}
+.list-servicos {
+    display: flex; /*irá transformar o list-servicos em container e os itens que estão dentro poderão ser editador*/
+    justify-content: space-between; /*vai alinhar os itens do início e do final próximo a linha inicial e final do container*/
+}
+.list-servicos .item-servico { /*item serviço dentro de list-serviço*/
+    text-align: center;
+}
+.item-servico a { /*ancora dentro de item-serviço*/
+    width: 220px;
+    background-color: white;
+    border-radius: 30px; /*faz um arredondamento*/
+    height: 50px;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 50px; /*altera a centralização vertical*/
+    padding: 5px 10px; /*preenchimento*/
+    text-decoration: none; /*tira o underline*/
+    color: #122A57;
+    font-size: 12px; /*tamanho da fonte*/
+    font-weight: 700;
+}
+.item-servico p { /*texto dentro de item-serviço*/
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+}
+.item-servico img { /*img dentro de item-servico*/
+    width: 80%;
+    margin: auto;  
+}
+#planos {
+    flex-direction: column; /*os itens ficarão em coluna*/
+    min-height: 100vh;
+    padding-top: 50px;
+}
+#planos h2{
+    font-size: 32px;
+}
+.list-planos {
+    display: flex; /*cria o container na classe list-items dentro de header e faz com que seja possível manipular os itens filhos do container*/
+    align-items: flex-end; /*os itens ficaarão alinhados na borda inferior do container*/
+    justify-content: space-between; /*vai alinhar os itens do início e do final próximo a linha inicial e final do container*/
+}
+.item-plano {
+    flex: 1; ; /*aqui está dizendo que o grow=1 (o espaçamento que sobra do conteúdo está sendo alinhado com a proporcionalidade de 1) o shrink=1 (é a compressão de 1 vez do item relacionado ao conteúdo) e o basis=0 (vai fazer com que não haja quebra no item, então se continuar crescendo o conteúdo, irá crescer o item sem a quebra de linha)*/
+    border: 5px solid #122A57;
+    margin-right: 20px;
+    padding: 10px; /*preenchimento no item plano, fez com que afastasse o risco embaixo do título plano*/
+    max-width: 240px;
+}
+.item-plano .btn { /*class btn que está dentro da class item-plano*/
+    margin: auto;
+    margin-bottom: 20px;
+}
+.item-plano h3 { /*h3 dentro de item-plano*/
+    font-size: 24px;
+    display: flex;
+    flex-direction: column; /*os itens ficarão em coluna*/
+    text-align: center;
+    margin-top: 20px;
+}
+.item-plano h3::after { /*after é um pseudo-codigo, fará um risco abaixo do titulo plano que está dentro da class item-plano*/
+    content: ""; /*para acrescentar o risco content tem que estar vazio*/
+    background-color: #122A57;
+    width: 100%;
+    height: 3px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.item-plano ul { /*ul que está dentro da class item-plano*/
+    padding: 10px 20px; /*preenchimento em cima e embaixo de 10px e preenchimento na direita e esquerda 20px*/ 
+    flex-direction: column; /*os itens ficarão em coluna*/
+    margin-bottom: 10px;
+}
+.item-plano ul li { 
+    display: flex; /*vai transformar o li  do item-plano em container*/
+    flex-wrap: nowrap; /*sem quebra de linha*/
+    align-items: center;
+}
+.item-plano ul li::before { /*before é um pseudo-elemento, irá criar nesse caso um ponto de marcação na frente do texto*/
+    content: ""; /*para acrescentar o ponto content tem que estar vazio*/
+    width: 10px; /*dimensionaamento do ponto*/
+    height: 10px; /*dimensionaamento do ponto*/
+    background-color: #122A57;
+    margin-right: 5px;
+}
+footer {
+    background-color: #122A57;
+    height: 70px;
+    display: flex; /*traansforma o footer em container*/
+    align-items: center;
+}
+footer .footer { /*class footer que está dentro da tag footer*/
+    justify-content: space-between; /*vai alinhar os itens do início e do final próximo a linha inicial e final do container*/  
+    color: white;
+}
+/* mobile - responsividade do site*/
+@media(max-width: 992px) { /*se passaar de 992px o contaainer plano fica em coluna*/
+    .flex-container {
+        flex-direction: column; 
+    }
+    .apresentacao {
+        flex-direction: column-reverse; /*colune reversa, inverte os itens*/
+    }
+    .apresentacao .texto-apresentacao { /*classe texto-apresentacao dentro da classe apresentacao*/
+        width: 100%; /*código que trata a responsividade do texto-apresentação*/
+    }
+    #quem-somos {
+        flex-direction: column-reverse; /*colune reversa, inverte os itens*/
+    }
+    #quem-somos img {
+        min-width: 320px;
+        margin: auto;
+    }
+    .list-servicos {
+        flex-direction: column;
+    }
+    .item-servico img {
+        width: 50%;
+        margin: auto;
+    }
+    .list-planos {
+        flex-direction: column;
+        align-items: flex-start; /*posicionaráa o item no começo do container*/
+        margin-bottom: 20px;
+    }
+    .list-planos .item-plano {
+        max-width: 90%;
+        margin: auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

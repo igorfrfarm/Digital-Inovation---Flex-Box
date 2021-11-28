@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex { /*é classe criada para o container*/
+            max-width: 300px;
+            padding: 10px;
+            border: 2px solid black;
+            display: flex; /*esse código é para organizar o conteúdo item um do lado do outro, essa propriedade é muito utilizado e, desenvolvimento mobile, utilizando esses itens em menu, fazendo com que se adapte ao tamanho da tela e respeite a proporcionalidade do dispositivo*/
+        }
+
+        .item { /*essa class item vai ser aplicada aos filhos do container .flex criado acima*/
+            background-color: aqua;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="flex"> 
+        <div class="item">item 1</div> <!--escrever div.item*3 irá criar essas 3 divs-->
+        <div class="item">item 2</div>
+        <div class="item">item 3</div>
+    </div>
+</body>
+</html>

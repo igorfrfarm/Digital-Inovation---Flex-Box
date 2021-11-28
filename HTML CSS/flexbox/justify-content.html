@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento justify content</title>
+    <style>
+        .container {
+            max-width: 400px; /*largura máxima*/
+            border: 2px solid black; /*borda do container*/
+            margin: 0;
+            display: flex; /*esse código é para colocar um item do lado do outro*/    
+        }
+        .item {
+            background-color: blueviolet;
+            margin: 5px; /*vai dar espaçamento entre os itens*/
+            text-align: center;
+            color: white;
+        }
+        .flex-start {
+            justify-content: flex-start; /*posiciona o item no começo*/
+        }
+        .flex-end {
+            justify-content: flex-end; /*posiciona o item no final*/
+        }
+        .center {
+            justify-content: center; /*posiciona o item e centraliza*/
+        }
+        .space-between {
+            justify-content: space-between; /*vai posicionar o primeiro e o ultimo item bem próximo a borda do container e colocar espaçamento entre os itens iguais*/
+        }
+        .space-around {
+            justify-content: space-around; /*vai posicionar o primeiro e o ultimo próximo a borda do container e colocar espaçamento entre os itens, nesse caso não fica tão próximo a borda do container comparado ao space-between*/
+        }
+        .column {
+            flex-direction: column; /*pode utilizar o justify-content com o flex-directin column, ficará em coluna, podendo ficar centralizado, o item posicionado no começo, no final*/
+        }
+    </style>
+</head>
+<body>
+    <h1>flex-start</h1>
+    <section class="container flex-start">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+    </section> 
+    <h1>flex-end</h1>
+    <section class="container flex-end">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+    </section>  
+    <h1>center</h1>
+    <section class="container center">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </section> 
+    <h1>space-between</h1>
+    <section class="container space-between">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </section> 
+    <h1>space-around</h1>
+    <section class="container space-around">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </section> 
+    <h1>flex-start em column</h1>
+    <section class="container flex-start column">
+        <div class="item">1</div>
+        <div class="item">item 2</div>
+        <div class="item">outro item</div>
+    </section> 
+</body>
+</html>

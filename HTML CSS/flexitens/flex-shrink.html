@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex shrink</title>
+    <style>
+        .flex-container {
+            display: flex; /*torna os elementos filhos/itens em caixas flexíveis*/
+            border: 1px solid black;
+            max-width: 350px;
+        }
+        .item {
+            background-color: orangered;
+            font-size: 24px;
+            margin: 5px;
+            text-align: center;
+            
+        }
+        .shrink1 {
+            flex-shrink: 1; /*vai comprimir o conteúdo para caber dentro do container*/
+        }
+        .shrink0 { 
+            flex-shrink: 0; /*vai comprimir porém não vai permitir a compressão dos itens, os itens vão vazar do container*/
+            flex-basis: 100px; /*precisa ter minimamente 100px porém devido o shrink for 0, não vai permitir a compressão dos itens*/ 
+        }
+        .shrink2 {
+            flex-shrink: 2; /*pode ser comprimido 2 vezes*/
+            flex-basis: 100px;
+        }
+        .shrink3 {
+            flex-shrink: 3; /*pode ser comprimido 3 vezes*/
+            flex-basis: 100px;
+        }
+        .grow1 {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>shrink1</h1>
+    <div class="flex-container">
+        <div class="item shrink1 grow1">A</div>
+        <div class="item shrink1 grow1">B</div>
+        <div class="item shrink1 grow1">C</div>
+        <div class="item shrink1 grow1">D</div>
+        <div class="item shrink1 grow1">E</div>
+    </div>
+    <h1>shrink1</h1>
+    <div class="flex-container">
+        <div class="item shrink1 grow1">A</div>
+        <div class="item shrink1 grow1">Lorem ipsum dolor</div>
+        <div class="item shrink1 grow1">C</div>
+        <div class="item shrink1 grow1">D</div>
+    </div>
+    <h1>shrink0 + basis 100px</h1>
+    <div class="flex-container">
+        <div class="item shrink0 grow1">A</div>
+        <div class="item shrink0 grow1">Lorem ipsum dolor</div>
+        <div class="item shrink0 grow1">Cipsum dolor</div>
+        <div class="item shrink0 grow1">D</div>
+    </div>
+    <h1>shrink mix + basis 100px</h1>
+    <div class="flex-container">
+        <div class="item shrink1 grow1">A</div>
+        <div class="item shrink2 grow1">Lorem ipsum dolor</div>
+        <div class="item shrink2 grow1">C</div>
+        <div class="item shrink3 grow1">D</div>
+    </div> 
+</body>
+</html>
